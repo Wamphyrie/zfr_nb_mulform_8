@@ -15,6 +15,11 @@ sap.ui.define([
 					return "";
 				}
 				return parseFloat(sValue).toFixed(2);
+			},
+			
+			ADDEMFF : function (Firstname, Lastname)
+			{
+				return  Firstname + " " + Lastname;
 			}
 
 		};

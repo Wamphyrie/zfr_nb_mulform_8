@@ -14,15 +14,20 @@
 		busyIndicatorDelay="{objectView>/delay}">
 
 		<semantic:content>
-			<ObjectHeader
-				id="objectHeader"
-				title="{Firstname}"
-				number="{
-							path: 'Salary',
-							formatter: '.formatter.numberUnit'
-				}"
-				numberUnit="{Country}">
-			</ObjectHeader>
+			<Table   items = "{/WorkerSet}"  fixedLayout = "false" growing = "true" growingThreshold = "10" >
+				<columns>
+					<Column>
+						<Label text = "Full Name"  design = "Bold" />
+					</Column>
+				</columns>
+				
+				<items>
+					<ColumnListItem>
+				<Text  width = "100px"  text = "{parts:[{path:'Firstname'}, {path:'Lastname'}], formatter:'.formatter.ADDEMFF'}" />
+					</ColumnListItem>
+				</items>
+				
+			</Table>
  		</semantic:content>
 
 		<semantic:sendEmailAction>
